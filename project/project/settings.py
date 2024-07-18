@@ -16,7 +16,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
  # Define the path to the 'frontend' folder within the project
-FRONTEND_DIR = os.path.join(Path(__file__).resolve().parent)
+FRONTEND_DIR = os.path.join('/Users/enriquegreene/Desktop/Official Websites/dmockup/frontend/build')
+
 
 # Update the STATICFILES_DIRS setting to point to the correct directory
 STATICFILES_DIRS = [
