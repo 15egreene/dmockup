@@ -11,19 +11,26 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+from whitenoise.middleware import WhiteNoiseMiddleware
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
  # Define the path to the 'frontend' folder within the project
-FRONTEND_DIR = os.path.join('/Users/enriquegreene/Desktop/Official Websites/dmockup/frontend/build')
+FRONTEND_DIR = Path(__file__).resolve().parent
 
-
-# Update the STATICFILES_DIRS setting to point to the correct directory
+# # Update the STATICFILES_DIRS setting to point to the correct directory
 STATICFILES_DIRS = [
-    FRONTEND_DIR,  # Additional directory for static files
+    FRONTEND_DIR,  # Additional directory for static files,
 ]
 
+# FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend/build')
+# STATICFILES_DIRS = [
+#     FRONTEND_DIR,
+# ]
+
+
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -40,6 +47,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +61,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -139,7 +148,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
