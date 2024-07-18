@@ -16,7 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
  # Define the path to the 'frontend' folder within the project
-FRONTEND_DIR = Path(__file__).resolve().parent
+FRONTEND_DIR = os.path.join(BASE_DIR, '/Users/enriquegreene/Desktop/Official Websites/dmockup/frontend/build')
 
 # # Update the STATICFILES_DIRS setting to point to the correct directory
 STATICFILES_DIRS = [
@@ -41,8 +41,7 @@ SECRET_KEY = 'django-insecure-lkepzbjox_c!xs=quf5p@3^5#m@%sho&f6s_^pk_a&je)_j$gw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'localhost:8000', '3.145.198.57', '3.145.198.57:8000']
-
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -63,7 +62,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,12 +70,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# CORS_ALLOWED_ORIGINS = [
-#     "http://18.222.206.250",
-#     "http://18.222.206.250:8000",
-#     "http://localhost:8000",
-#     "http://127.0.0.1:8000",
-# ]
 
 ROOT_URLCONF = 'project.urls'
 
