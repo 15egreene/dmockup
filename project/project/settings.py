@@ -76,7 +76,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://18.222.206.250",
     "http://18.222.206.250:8000",
     "http://localhost:8000",
-    "http://127.0.0.1:9000",
+    "http://127.0.0.1:8000",
 ]
 
 ROOT_URLCONF = 'project.urls'
