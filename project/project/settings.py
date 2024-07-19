@@ -13,16 +13,18 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from whitenoise.middleware import WhiteNoiseMiddleware
 import os
+import rest_framework.permissions
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
  # Define the path to the 'frontend' folder within the project
-FRONTEND_DIR = os.path.join(BASE_DIR, '/Users/enriquegreene/Desktop/Official Websites/dmockup/frontend/build')
+FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend/build/static')
 
 # # Update the STATICFILES_DIRS setting to point to the correct directory
 STATICFILES_DIRS = [
     FRONTEND_DIR,  # Additional directory for static files,
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend/build')
 # STATICFILES_DIRS = [
 #     FRONTEND_DIR,
@@ -41,7 +43,7 @@ SECRET_KEY = 'django-insecure-lkepzbjox_c!xs=quf5p@3^5#m@%sho&f6s_^pk_a&je)_j$gw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.117.161.103','.vercel.app','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -71,11 +73,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'https://*.vercel.app',
-    'http://localhost:3000'
-    '18.117.161.103'
-]
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.AllowAny']}
+
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'project.urls'
 
