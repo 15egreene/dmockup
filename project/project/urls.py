@@ -20,5 +20,4 @@ from todos.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('todos.urls')),
-    path('', TodoViewSet.as_view(), name='anything')
 ]
