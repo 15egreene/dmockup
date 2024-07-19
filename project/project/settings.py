@@ -72,7 +72,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://dmockup.vercel.app',
+    'https://*.vercel.app',
     'http://localhost:3000'
 ]
 
