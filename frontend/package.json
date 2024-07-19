@@ -40,7 +40,7 @@
       }
     ]
   },
-  "proxy": "http://18.191.227.108:8000",
+  "proxy": "https://dmockup.vercel.app",
   "eslintConfig": {
     "extends": [
       "react-app",
