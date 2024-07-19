@@ -41,7 +41,7 @@ SECRET_KEY = 'django-insecure-lkepzbjox_c!xs=quf5p@3^5#m@%sho&f6s_^pk_a&je)_j$gw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.191.227.108','.vercel.app','localhost']
+ALLOWED_HOSTS = ['18.117.161.103','.vercel.app','localhost']
 
 
 # Application definition
@@ -74,6 +74,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'https://*.vercel.app',
     'http://localhost:3000'
+    '18.117.161.103'
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -106,6 +107,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'vWKTvsoFelgIBaPQiCfnydLrgaLZJxQh',
+#         'HOST': 'postgres.railway.internal',
+#         'PORT': '5432'
+#     }
+# }
 
 AWS_ACCESS_KEY_ID = "AKIA6ODU2IJJWXFVR4EK"
 AWS_SECRET_ACCESS_KEY = "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"
