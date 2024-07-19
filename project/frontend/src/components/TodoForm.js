@@ -30,7 +30,7 @@ export default function TodoForm({ todos, setTodos }) {
     }
 
     axios
-      .post("http://18.117.161.103:8000/api/todos/", formData)
+      .post("http://52.15.175.162:8000/api/todos/", formData)
       .then((res) => {
         setName("");
         setPic(""); // Reset image state

@@ -8,7 +8,7 @@ const Others = () => {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-      axios.get("http://18.117.161.103:8000/api/todos/")
+      axios.get("http://52.15.175.162:8000/api/todos/")
         .then((res) => {
           setTodos(res.data)
         }).catch(() => {
