@@ -71,6 +71,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'https://dmockup.vercel.app',
+]
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
