@@ -76,7 +76,10 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': [
     'rest_framework.permissions.AllowAny']}
 
-
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'https://dmockup.vercel.app'
+]
 CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'project.urls'
