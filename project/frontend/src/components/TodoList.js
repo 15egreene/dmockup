@@ -15,7 +15,7 @@ export default function TodoList({ todos = [], setTodos }) {
     }
 
     const handleDelete = (id) => {
-        axios.delete(`/api/todos/${id}/`)
+        axios.delete(`https://18.222.39.119:8000/api/todos/${id}/`)
             .then(() => {
                 const newTodos = todos.filter(t => {
                     return t.id !== id
@@ -27,7 +27,7 @@ export default function TodoList({ todos = [], setTodos }) {
     }
 
     const handleUpdate = async (id, value) => {
-        return axios.patch(`/api/todos/${id}/`, value)
+        return axios.patch(`https://18.222.39.119:8000/api/todos/${id}/`, value)
             .then((res) => {
                 const { data } = res;
                 const newTodos = todos.map(t => {
