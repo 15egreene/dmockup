@@ -40,7 +40,7 @@
       }
     ]
   },
-  "proxy": "http://18.222.39.119:8000",
+  "proxy": "https://18.222.39.119:8000",
   "eslintConfig": {
     "extends": [
       "react-app",
